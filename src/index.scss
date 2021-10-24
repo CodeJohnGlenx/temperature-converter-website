@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$label-color: #323232;
+$border-bottom-color: #A5A5A5;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#temperature-converter-div {
+    max-width: 20em;
+    margin: 2em auto;
+}
+
+
+#converter-form {
+    column-gap: 1em;
+    display: grid;
+    grid-template-areas: 
+    "degrees type"
+    "result result" 
+    "convert convert";
+    grid-template-columns: repeat(2, minmax(5em, 1fr));
+    padding: 0em 1.2em;
+    margin-top: 1.5em;
+
+    label {
+        color: $label-color;
+        font-size: 0.9em;
+    }
+
+    #degrees-label {
+        grid-area: degrees;
+        input {
+            border: none;
+            border-bottom: 1.5px solid $border-bottom-color;
+            font-size: 1.3em;
+            margin-top: 0.4em;
+            padding: 0.25em 0em;
+            width: 100%;
+        }
+
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid #32A4FF;
+            box-shadow: 2px 2px 6px 2px #E1E1E1;
+        }
+    }
+
+    #type-label {
+        grid-area: type;
+        select {
+            border: none;
+            border-bottom: 1.5px solid $border-bottom-color;
+            font-size: 1.3em;
+            margin-top: 0.4em;
+            padding: 0.2em 0em;
+            width: 100%;
+        }
+
+        select:focus {
+            border-bottom: 2px solid #32A4FF;
+            box-shadow: 2px 2px 6px 2px #E1E1E1;
+            outline: none;
+        }
+        
+    }
+
+    #result {
+        color: $label-color;
+        font-size: 0.9em;
+        grid-area: result;
+        margin-top: 0.8em;
+
+        #value {
+            border-bottom: 1.5px solid $border-bottom-color;
+            color: black;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+    }
+
+    #convert-btn {
+        background-color: #32A4FF;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 0.95em;
+        font-weight: bold;
+        grid-area: convert;
+        margin-top: 1em;
+        padding: 0.7em;
+        width: 85%;
+        justify-self: center;
+    }
+
+    #convert-btn:hover {
+        color: #EBEBEB;
+        background-color: #1E90EB;
+        box-shadow: 2px 2px 6px 2px #E1E1E1;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    #temperature-converter-div {
+        max-width: 35em;
+        margin: 2em auto;
+    }
+
+    #converter-form {
+        border-radius: 6px;
+        box-shadow: 2px 2px 10px 2px #E1E1E1;
+        grid-template-columns: 30% 1fr 23%; 
+        grid-template-areas: 
+        "degrees type convert" 
+        "result result result";
+        padding: 2em 1.5em;
+    }
+
+    #degrees-label {
+        input {
+            border: 1px solid $border-bottom-color !important;
+            padding: 0.65em !important;
+        }
+
+        input:focus {
+            border: 1px solid #32A4FF !important;
+        }
+    }
+
+    #type-label {
+        select {
+            border: 1px solid $border-bottom-color !important;
+            padding: 0.6em !important;
+        }
+        
+        select:focus {
+            border: 1px solid #32A4FF !important;
+        }
+        
+    }
+
+    #convert-btn {
+        font-size: 1.1em !important;
+        margin-top: 1.25em !important;
+        padding: 0em !important;
+        height: 70% !important;
+        width: 100% !important;
+    }
+
+
+    #result {
+        margin-top: 1.5em !important;
+        #value {
+            border-bottom: none !important;
+        }
+    }
+
+
+}
+
